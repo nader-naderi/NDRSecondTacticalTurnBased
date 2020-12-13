@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &167494646060200035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167494646060200033}
+  - component: {fileID: 167494646060200034}
+  - component: {fileID: 167494646060200032}
+  m_Layer: 0
+  m_Name: GridBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &167494646060200033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167494646060200035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167494646060200034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167494646060200035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1f65ad5c3e1ad49abe2c5a4fac6471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInited: 0
+  sizeX: 64
+  sizeY: 1
+  sizeZ: 64
+  scaleXZ: 1
+  scaleY: 1
+  yLevels: []
+  levelName: level1
+  saveLevel: 0
+  loadLevel: 1
+  debugNode: 1
+  debugMat: {fileID: 2100000, guid: 6d79a048783026043951e26ba74d2a34, type: 2}
+  unwalkableMaterial: {fileID: 2100000, guid: f2a00fcf9c7a2dd4fa19d55e9cfae006, type: 2}
+--- !u!114 &167494646060200032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167494646060200035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9412a536d810a5f4eb46d0d0fcc75986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  units:
+  - {fileID: 0}
+  - {fileID: 0}
+  curUnit: {fileID: 0}
+  movingPlayer: 0
+  blue: {fileID: 2100000, guid: 71649ed034981ea429f06b574aa1b957, type: 2}
+  red: {fileID: 2100000, guid: f2a00fcf9c7a2dd4fa19d55e9cfae006, type: 2}
