@@ -173,6 +173,9 @@ namespace NDR2ndTTB
 
         public void AddPath(List<PathInfo> p)
         {
+            if (p.Count < 2)
+                return;
+
             pathIndex = 1;
             path = p;
             moving = true;
@@ -192,7 +195,7 @@ namespace NDR2ndTTB
             stats.CurrentActionPoints = stats.GetBaseActionPoints();
             if (GameManager.instance.IsCurrentUnit(this))
             {
-                UIManager.instance.UpdateAponCharacterPanel(stats.CurrentActionPoints);
+                UIManager.instance.UpdateActionPointsIndicator(stats.CurrentActionPoints);
             }
         }
 

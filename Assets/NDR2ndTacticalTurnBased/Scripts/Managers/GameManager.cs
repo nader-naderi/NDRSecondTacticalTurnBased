@@ -96,9 +96,10 @@ namespace NDR2ndTTB
                 UnitController hasUnit = NodeHasUnit(curNode);
 
                 if (curUnit)
+                {
                     if (curUnit.IsMoving())
                         return;
-
+                }
 
                 if (!hasUnit && curUnit)
                 {
@@ -284,63 +285,26 @@ namespace NDR2ndTTB
             }
         }
 
-        public void ChangeStance(bool isUp)
+        public void ChangeStance(EStance targetStance)
         {
             if (!curUnit) return;
 
-            //  Calculate Action points.
+            EStance curStance = curUnit.GetStance;
             int targetPoints = 0;
-            EStance targetStance = EStance.Normal;
 
-            switch (curUnit.GetStance)
+            switch (curStance)
             {
                 case EStance.Normal:
-                    if(isUp)
-                    {
-                        targetPoints = 0;
-                        targetStance = EStance.Run;
-                    }
-                    else
-                    {
-                        targetPoints = 2;
-                        targetStance = EStance.Crouch;
-                    }
+                    targetPoints = StaticFunctions.S_NormalToTarget(targetStance);
                     break;
                 case EStance.Run:
-                    if(isUp)
-                    {
-                        targetPoints = 999;
-                    }
-                    else
-                    {
-                        targetPoints = 0;
-                        targetStance = EStance.Normal;
-                    }
+                    targetPoints = StaticFunctions.S_NormalToTarget(targetStance);
                     break;
                 case EStance.Crouch:
-                    if(isUp)
-                    {
-                        targetPoints = 2;
-                        targetStance = EStance.Normal;
-                        Debug.Log("1");
-                    }
-                    else
-                    {
-                        targetPoints = 999;
-
-                    }
-                   
+                    targetPoints = StaticFunctions.S_CrouchToTarget(targetStance);
                     break;
                 case EStance.Prone:
-                    if(isUp)
-                    {
-                        targetPoints = 2;
-                        targetStance = EStance.Crouch;
-                    }
-                    else
-                    {
-                        targetPoints = 999;
-                    }
+                    targetPoints = StaticFunctions.S_ProneToTarget(targetStance);
                     break;
                 default:
                     break;
@@ -350,7 +314,7 @@ namespace NDR2ndTTB
                 return;
 
             curUnit.Stats.CurrentActionPoints -= targetPoints;
-
+            UIManager.instance.UpdateAponCharacterPanel(curUnit.Stats.CurrentActionPoints);
             curUnit.ChangeStance(targetStance);
             preNode = null;
         }

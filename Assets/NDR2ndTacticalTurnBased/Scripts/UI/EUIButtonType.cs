@@ -2,6 +2,6 @@
 {
     public enum EUIButtonType
     {
-        EndTurn, ChangeStanceUp, ChangeStanceDown
+        EndTurn, Up, Run, Crouch, Prone
     }
 }

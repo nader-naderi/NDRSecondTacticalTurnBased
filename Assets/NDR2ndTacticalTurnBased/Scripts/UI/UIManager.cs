@@ -74,18 +74,25 @@ namespace NDR2ndTTB.UI
 
         public void PressedBtn(EUIButtonType button)
         {
+            GameManager gameManager = GameManager.instance;
+
             switch (button)
             {
                 case EUIButtonType.EndTurn:
                     GameManager.instance.EndTurn();
                     break;
-                case EUIButtonType.ChangeStanceUp:
-                    GameManager.instance.ChangeStance(true);
+                case EUIButtonType.Up:
+                    gameManager.ChangeStance(EStance.Normal);
                   
                     break;
-                case EUIButtonType.ChangeStanceDown:
-                    GameManager.instance.ChangeStance(false);
-
+                case EUIButtonType.Crouch:
+                    gameManager.ChangeStance(EStance.Crouch);
+                    break;
+                case EUIButtonType.Run:
+                    gameManager.ChangeStance(EStance.Run);
+                    break;
+                case EUIButtonType.Prone:
+                    gameManager.ChangeStance(EStance.Prone);
                     break;
                 default:
                     break;
