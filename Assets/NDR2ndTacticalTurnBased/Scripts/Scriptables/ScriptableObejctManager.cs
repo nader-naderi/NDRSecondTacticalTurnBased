@@ -14,7 +14,7 @@ namespace NDR2ndTTB
 
             if(Resources.Load(typeof(T).ToString()) == null)
             {
-                string assetPath = AssetDatabase.GenerateUniqueAssetPath("Asset/Resources/" + typeof(T).ToString() + ".asset");
+                string assetPath = AssetDatabase.GenerateUniqueAssetPath("Assets/Resources/" + typeof(T).ToString() + ".asset");
                 AssetDatabase.CreateAsset(asset, assetPath);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();

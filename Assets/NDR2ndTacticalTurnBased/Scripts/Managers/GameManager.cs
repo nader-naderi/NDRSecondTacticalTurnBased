@@ -21,6 +21,8 @@ namespace NDR2ndTTB
         bool hasPath;
 
         public List<UnitController> units = new List<UnitController>();
+        Dictionary<string, int> unitIndex = new Dictionary<string, int>();
+
         public UnitController curUnit;
         public bool movingPlayer;
         Node curNode;
@@ -36,13 +38,14 @@ namespace NDR2ndTTB
 
         LineRenderer pathBlueVisual;
         GridBase grid;
-
+        UIManager uIManager;
 
         public void Init()
         {
             grid = GridBase.instance;
+            uIManager = UIManager.instance;
 
-           
+
 
             GameObject blue = new GameObject();
             blue.name = "lvl visual blue";
@@ -57,11 +60,22 @@ namespace NDR2ndTTB
             pathRedVisual.startWidth = 0.2f;
             pathRedVisual.endWidth = 0.2f;
             pathRedVisual.material = this.red;
+            InitUnit();
+        }
 
+        void InitUnit()
+        {
+            
             for (int i = 0; i < units.Count; i++)
             {
                 units[i].Init();
+                uIManager.AddSmallPortrait(units[i].Stats);
+
+                unitIndex.Add(units[i].Stats.CharID, i);
             }
+
+           // uIManager.UpdateCharacterPanel(curUnit.Stats);
+            uIManager.CharacterPanel.SetActive(false);
         }
 
         private void Update()
@@ -98,6 +112,11 @@ namespace NDR2ndTTB
                 else
                 {
                     curUnit = hasUnit;
+
+                    if (curUnit)
+                    {
+                        uIManager.UpdateCharacterPanel(curUnit.Stats);
+                    }
                 }
             }
 
@@ -335,6 +354,36 @@ namespace NDR2ndTTB
             curUnit.ChangeStance(targetStance);
             preNode = null;
         }
+
+        public void ActivateUnitWithID(string id)
+        {
+            int index = ResourcesManager.instance.GetIndexFromString(unitIndex, id);
+            if (index == -1)
+                return;
+
+            UnitController controller = units[index];
+            uIManager.UpdateCharacterPanel(controller.Stats);
+            curUnit = controller;
+        }
+
+        public bool IsCurrentUnit(UnitController con)
+        {
+            if (!curUnit) return false;
+
+            if (curUnit.Equals(con))
+                return true;
+
+            return false;
+        }
+
+
+        //UnitController GetCharacter(string id)
+        //{
+        //    for (int i = 0; i < units.Count; i++)
+        //    {
+
+        //    }
+        //}
 
     }
     public class PathInfo

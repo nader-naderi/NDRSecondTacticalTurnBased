@@ -6,6 +6,7 @@ namespace NDR2ndTTB
     [System.Serializable]
     public class UnitStats
     {
+        [SerializeField] string charID;
         [SerializeField] float currentHealth = 65;
         [SerializeField] float stamina = 60;
         [SerializeField] float morale = 50;
@@ -22,6 +23,10 @@ namespace NDR2ndTTB
         [Range(0, 20)] public int level = 1;
 
         public int CurrentActionPoints { get => currentActionPoints; set => currentActionPoints = value; }
+        public string CharID { get => charID; }
+        public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
+        public float Stamina { get => stamina; set => stamina = value; }
+        public float Morale { get => morale; set => morale = value; }
 
         public int GetBaseActionPoints()
         {
@@ -42,6 +47,17 @@ namespace NDR2ndTTB
             return r2;
 
 
+        }
+
+        public void UpdateCharacterStats()
+        {
+            UnitStats c = ResourcesManager.instance.GetCharacterStats(charID);
+
+            health = c.health;
+            agility = c.agility;
+            strength = c.strength;
+            dexterity = c.dexterity;
+            level = c.level;
         }
 
     }

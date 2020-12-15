@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using NDR2ndTTB.UI;
 
 namespace NDR2ndTTB
 {
@@ -58,6 +59,10 @@ namespace NDR2ndTTB
             GetNode.ChangeNodeStatus(false, GridBase.instance);
             anim = GetComponentInChildren<Animator>();
             anim.applyRootMotion = false;
+
+            stats.CurrentHealth = stats.health;
+            stats.Stamina = 100;
+
             EndTurn();
         }
         float counter = 4;
@@ -159,6 +164,11 @@ namespace NDR2ndTTB
         {
             stats.CurrentActionPoints -= p.ap;
             GetNode.ChangeNodeStatus(false, GridBase.instance);
+
+            if(GameManager.instance.IsCurrentUnit(this))
+            {
+                UIManager.instance.UpdateAponCharacterPanel(stats.CurrentActionPoints);
+            }
         }
 
         public void AddPath(List<PathInfo> p)
@@ -180,6 +190,10 @@ namespace NDR2ndTTB
         public void EndTurn()
         {
             stats.CurrentActionPoints = stats.GetBaseActionPoints();
+            if (GameManager.instance.IsCurrentUnit(this))
+            {
+                UIManager.instance.UpdateAponCharacterPanel(stats.CurrentActionPoints);
+            }
         }
 
         public void ChangeStance(EStance stance)
