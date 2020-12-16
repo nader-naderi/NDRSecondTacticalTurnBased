@@ -15,7 +15,7 @@ namespace NDR2ndTTB
 
         #endregion
 
-
+        
 
         [SerializeField]
         float speed = 0.1f;

@@ -44,7 +44,7 @@ namespace NDR2ndTTB
         {
             grid = GridBase.instance;
             uIManager = UIManager.instance;
-
+            uIManager.Init();
 
 
             GameObject blue = new GameObject();
@@ -86,6 +86,14 @@ namespace NDR2ndTTB
 
             bool isOverUIElement = EventSystem.current.IsPointerOverGameObject();
 
+            if(isOverUIElement)
+            {
+                if(curNode != null)
+                uIManager.CloseTooltipIndicator();
+                curNode = null;
+                return;
+            }
+
             FindNode();
 
 
@@ -108,7 +116,6 @@ namespace NDR2ndTTB
                         curUnit.ConfirmOrder();
                         curUnit.AddPath(pathsInfo);
                     }
-                   
                 }
                 else
                 {

@@ -467,6 +467,7 @@ MonoBehaviour:
   characterGridTrans: {fileID: 879832866}
   smallPortraitTemplte: {fileID: 516962911973225431, guid: f63b80aad64da3d488e1535e1c3731b2, type: 3}
   CharacterPanel: {fileID: 1376316650}
+  allCharacters: {fileID: 323766923}
   portraitBig: {fileID: 2064318014}
   apIdicator: {fileID: 1173391655}
   health: {fileID: 1461085440}
@@ -711,6 +712,8 @@ GameObject:
   - component: {fileID: 100235841}
   - component: {fileID: 100235840}
   - component: {fileID: 100235843}
+  - component: {fileID: 100235845}
+  - component: {fileID: 100235844}
   m_Layer: 5
   m_Name: StanceBtn Normal
   m_TagString: Untagged
@@ -844,6 +847,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 1
+--- !u!114 &100235844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100235838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe26efe3a617845b5f86d4f646f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionIndex: normal
+--- !u!114 &100235845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100235838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 100235844}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 100235844}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &119928627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -936,7 +997,7 @@ RectTransform:
   - {fileID: 1487675816}
   - {fileID: 879832866}
   m_Father: {fileID: 945169922}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3026,19 +3087,19 @@ PrefabInstance:
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: ba558e822758bcc4c8f57fe2871b9a73, type: 3}
+      objectReference: {fileID: 8300000, guid: c12ee0b346314a6489c3b90ccc24886e, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: fbdb0f78095f0a245ae7eb1723313972, type: 3}
+      objectReference: {fileID: 8300000, guid: d967b7da74eab384a8074cabec3bbc4a, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 39687ed8842e30e4b95ccbf5c3d28b24, type: 3}
+      objectReference: {fileID: 8300000, guid: 4568ad71b25dca846b78cdb209539a75, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: 1850c1983a36581468f16992478f1cc5, type: 3}
+      objectReference: {fileID: 8300000, guid: e4a2a30167bd5834fbcd06d68841e973, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: runSpeed
       value: 8
@@ -3581,7 +3642,7 @@ RectTransform:
   m_Children:
   - {fileID: 1643937244}
   m_Father: {fileID: 945169922}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6364,6 +6425,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ef655cf74131e4c9fcc45b3b77e0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &910809320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910809322}
+  - component: {fileID: 910809321}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &910809321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910809320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1142586de5beda247bbfb69521d7e64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  rotateSpeed: 5
+--- !u!4 &910809322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910809320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &932085595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6578,10 +6684,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 323766924}
-  - {fileID: 486727950}
   - {fileID: 121712533}
   - {fileID: 1416960603}
   - {fileID: 1376316651}
+  - {fileID: 486727950}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7214,6 +7320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f3d70cf49b20b4fb41477d529db9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charactersScriptableObject: {fileID: 11400000, guid: 04a14e1dd7e562d428172ada8d386496, type: 2}
+  descriptionSceriptable: {fileID: 11400000, guid: 29c795ad71afb534b95efd34a918077c, type: 2}
 --- !u!4 &1030397624
 Transform:
   m_ObjectHideFlags: 0
@@ -8545,6 +8653,8 @@ GameObject:
   - component: {fileID: 1181279761}
   - component: {fileID: 1181279760}
   - component: {fileID: 1181279762}
+  - component: {fileID: 1181279764}
+  - component: {fileID: 1181279763}
   m_Layer: 5
   m_Name: CurrentWeapon
   m_TagString: Untagged
@@ -8624,6 +8734,64 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1181279763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181279758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe26efe3a617845b5f86d4f646f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionIndex: rh
+--- !u!114 &1181279764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181279758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1181279763}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1181279763}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1196853273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10837,7 +11005,7 @@ RectTransform:
   - {fileID: 1927556240}
   - {fileID: 1748328725}
   m_Father: {fileID: 945169922}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -10987,6 +11155,8 @@ GameObject:
   - component: {fileID: 1393051493}
   - component: {fileID: 1393051495}
   - component: {fileID: 1393051496}
+  - component: {fileID: 1393051498}
+  - component: {fileID: 1393051497}
   m_Layer: 5
   m_Name: StanceBtn Run
   m_TagString: Untagged
@@ -11120,6 +11290,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 2
+--- !u!114 &1393051497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393051491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe26efe3a617845b5f86d4f646f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionIndex: run
+--- !u!114 &1393051498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393051491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1393051497}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1393051497}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1394010805 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4192339149919660, guid: 57c43a8966d74654c86c3b11e3d5f850, type: 3}
@@ -11376,7 +11604,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945169922}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -11795,8 +12023,10 @@ GameObject:
   - component: {fileID: 1473237996}
   - component: {fileID: 1473237995}
   - component: {fileID: 1473237994}
+  - component: {fileID: 1473237998}
+  - component: {fileID: 1473237997}
   m_Layer: 5
-  m_Name: CurrentWeapon (1)
+  m_Name: SideWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11874,6 +12104,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473237992}
   m_CullTransparentMesh: 0
+--- !u!114 &1473237997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473237992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe26efe3a617845b5f86d4f646f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionIndex: lh
+--- !u!114 &1473237998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473237992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1473237997}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1473237997}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1481227114 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1708061975032716567, guid: a60aed3109aac2e4e8b4fbd8e35506ec, type: 3}
@@ -12682,19 +12970,19 @@ PrefabInstance:
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: c12ee0b346314a6489c3b90ccc24886e, type: 3}
+      objectReference: {fileID: 8300000, guid: ba558e822758bcc4c8f57fe2871b9a73, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: d967b7da74eab384a8074cabec3bbc4a, type: 3}
+      objectReference: {fileID: 8300000, guid: fbdb0f78095f0a245ae7eb1723313972, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 4568ad71b25dca846b78cdb209539a75, type: 3}
+      objectReference: {fileID: 8300000, guid: 39687ed8842e30e4b95ccbf5c3d28b24, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: rogerClip.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: e4a2a30167bd5834fbcd06d68841e973, type: 3}
+      objectReference: {fileID: 8300000, guid: 1850c1983a36581468f16992478f1cc5, type: 3}
     - target: {fileID: 6867061997843458483, guid: 68f5fd4ff7d14c6479de49ad38c6bf76, type: 3}
       propertyPath: stats.charID
       value: char_2
@@ -13966,6 +14254,8 @@ GameObject:
   - component: {fileID: 1748328727}
   - component: {fileID: 1748328726}
   - component: {fileID: 1748328729}
+  - component: {fileID: 1748328731}
+  - component: {fileID: 1748328730}
   m_Layer: 5
   m_Name: StanceBtn Prone
   m_TagString: Untagged
@@ -14099,6 +14389,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 4
+--- !u!114 &1748328730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748328724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe26efe3a617845b5f86d4f646f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionIndex: prone
+--- !u!114 &1748328731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748328724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1748328730}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1748328730}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1757480994 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -1271795058638803963, guid: 8e8c31f8740134d4086fec064d4245d2, type: 3}
@@ -15049,6 +15397,8 @@ GameObject:
   - component: {fileID: 1927556242}
   - component: {fileID: 1927556241}
   - component: {fileID: 1927556244}
+  - component: {fileID: 1927556246}
+  - component: {fileID: 1927556245}
   m_Layer: 5
   m_Name: StanceBtn Crouch
   m_TagString: Untagged
@@ -15182,6 +15532,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 3
+--- !u!114 &1927556245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927556239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe26efe3a617845b5f86d4f646f4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionIndex: crouch
+--- !u!114 &1927556246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927556239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1927556245}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1927556245}
+          m_TargetAssemblyTypeName: NDR2ndTTB.UI.Tooltip, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1929310044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16550,7 +16958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4635846456799096, guid: 00a13970af147ef4ebfcd56832d3a930, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.301511
+      value: -9.208
       objectReference: {fileID: 0}
     - target: {fileID: 4635846456799096, guid: 00a13970af147ef4ebfcd56832d3a930, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17614,7 +18022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4335111358647997763, guid: 35c225c200e0fb34998c6c6cf5b51614, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4335111358647997763, guid: 35c225c200e0fb34998c6c6cf5b51614, type: 3}
       propertyPath: m_LocalPosition.z

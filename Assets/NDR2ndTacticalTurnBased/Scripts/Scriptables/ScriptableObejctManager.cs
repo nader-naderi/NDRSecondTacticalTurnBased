@@ -27,10 +27,16 @@ namespace NDR2ndTTB
             }
         }
 
-        [MenuItem("Assets/Databases/Create Characters List ")]
+        [MenuItem("Turn Based/Databases/Create Characters List ... ")]
         public static void CreateCharctersObject()
         {
             ScriptableObejctManager.CreateAsste<NDR2ndTTB.CharactersScriptableObject>();
+        }
+
+        [MenuItem("Turn Based/Databases/Create Description List ... ")]
+        public static void CreateDescriptionBase()
+        {
+            ScriptableObejctManager.CreateAsste<NDR2ndTTB.DescriptionSceriptable>();
         }
     }
 }

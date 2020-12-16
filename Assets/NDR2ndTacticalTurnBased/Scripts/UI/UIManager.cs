@@ -22,6 +22,7 @@ namespace NDR2ndTTB.UI
         public GameObject smallPortraitTemplte;
 
         public GameObject CharacterPanel;
+        public GameObject allCharacters;
         public Image portraitBig;
         public Text apIdicator;
 
@@ -35,6 +36,8 @@ namespace NDR2ndTTB.UI
         public GameObject endTurnBtn;
         [SerializeField] GameObject mouseFollower;
         [SerializeField] Text actionPointsTxt;
+
+        int tooltipTimer;
 
         public void AddSmallPortrait(UnitStats stats)
         {
@@ -99,17 +102,43 @@ namespace NDR2ndTTB.UI
             }
         }
 
-        public void UpdateActionPointsIndicator(int value)
+        public void UpdateActionPointsIndicator(int id)
         {
-            string v = value.ToString();
+            string v = id.ToString();
             actionPointsTxt.text = v;
             apIdicator.text = v;
+            isTooltipIndicatorClosed = false;
         }
 
         public void UpdateAponCharacterPanel(int value)
         {
             string v = value.ToString();
             apIdicator.text = v;
+        }
+
+        public void Init()
+        {
+            CharacterPanel.SetActive(false);
+            allCharacters.SetActive(true);
+            CloseTooltipIndicator();
+        }
+
+        public void UpdateTooltipIndicator(string value)
+        {
+            isTooltipIndicatorClosed = false;
+            DescriptionContainter containter = ResourcesManager.instance.GetDescription(value);
+            actionPointsTxt.text = containter.description;
+        }
+
+        bool isTooltipIndicatorClosed;
+
+        public void CloseTooltipIndicator()
+        {
+            if (isTooltipIndicatorClosed)
+                return;
+            isTooltipIndicatorClosed = true;
+            
+            actionPointsTxt.text = string.Empty;
         }
 
     }

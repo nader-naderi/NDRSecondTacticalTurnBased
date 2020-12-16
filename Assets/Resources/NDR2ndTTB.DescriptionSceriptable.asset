@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b009c51c3d540d9469a730414feca869, type: 3}
+  m_Name: NDR2ndTTB.DescriptionSceriptable
+  m_EditorClassIdentifier: 
+  descriptions:
+  - id: empty
+    description: 
+  - id: run
+    description: Run
+  - id: stand
+    description: Stand
+  - id: crouch
+    description: Crouch
+  - id: normal
+    description: Normal
+  - id: prone
+    description: Prone
+  - id: item_Slot
+    description: Item Slot
+  - id: holster_Slot
+    description: Holster Slot
+  - id: rh
+    description: Right Hand
+  - id: lh
+    description: Left Hand
